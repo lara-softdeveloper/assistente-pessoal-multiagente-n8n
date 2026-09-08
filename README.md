@@ -9,7 +9,7 @@ Cada agente possui uma responsabilidade específica, permitindo separar as funci
 ### 🔄 Fluxo dos Agentes
 
 <p align="center">
-  <img src="Diagrama_Fluxo_Agentes_IA.png" alt="Arquitetura do Assistente Pessoal Multiagente" width="850">
+  <img src="" alt="Arquitetura do Assistente Pessoal Multiagente" width="850">
 </p>
 
 ### Como funciona
