@@ -383,9 +383,8 @@ O projeto explora conceitos como:
 
 **Lara Santos Pereira Soares**
 
-💼 [LinkedIn](https://linkedin.com/in/lara-soares-668a97326)
-🐙 [GitHub](https://github.com/lara-softdeveloper)
-
+📧 **E-mail:** [lara.sps.dev@gmail.com](mailto:lara.sps.dev@gmail.com)  
+💼 **LinkedIn:** [Lara Santos](https://www.linkedin.com/in/lara-santos-668a97326/)
 ---
 
 ⭐ Se este projeto foi útil ou interessante, considere deixar uma **Star** no repositório.
