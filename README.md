@@ -1,66 +1,35 @@
-Claro — aqui está **só o Markdown limpo**, pronto para copiar e colar no `README.md` do GitHub:
-
-````md
-# 🤖 Assistente Pessoal Multiagente com n8n
-
-Assistente pessoal automatizado desenvolvido com **n8n**, utilizando uma arquitetura **multiagente** para integrar diferentes serviços e executar tarefas a partir de comandos enviados pelo **Telegram**.
-
-O sistema recebe mensagens em **texto ou áudio**, interpreta a solicitação e utiliza um **agente orquestrador** para direcionar cada tarefa ao agente especializado responsável.
-
-Entre as integrações estão **OpenAI, Gmail, Google Calendar, Google Contacts, Telegram e Tavily**.
-
----
-
-## 🚀 Principais Funcionalidades
-
-- 💬 Interação pelo **Telegram**
-- 🎙️ Processamento de mensagens de voz com **Speech-to-Text**
-- 🧠 Arquitetura baseada em **agentes especializados**
-- 📧 Envio, resposta e gerenciamento de e-mails
-- 📅 Criação, consulta, atualização e exclusão de eventos
-- 👥 Gerenciamento de contatos
-- 🌐 Pesquisa de informações na web
-- ✍️ Geração de conteúdo com Inteligência Artificial
-- 🧮 Execução de cálculos
-- 💾 Memória contextual das conversas
-- 🔄 Integração entre múltiplas APIs e serviços
-
----
-
 ## 🧠 Arquitetura do Sistema
 
-O projeto utiliza uma arquitetura baseada em um **agente orquestrador central**, responsável por interpretar a solicitação do usuário e delegar a tarefa ao agente especializado mais adequado.
+O projeto utiliza uma arquitetura **multiagente**, organizada em torno de um agente orquestrador central.
 
-```mermaid
-flowchart TD
+O **Assistente Pessoal** interpreta a solicitação recebida pelo Telegram e identifica qual agente ou ferramenta deve ser acionado para executar a tarefa.
 
-    TG[Telegram] --> SW{Texto ou Áudio?}
+Cada agente possui uma responsabilidade específica, permitindo separar as funcionalidades e facilitar a manutenção e expansão do workflow.
 
-    SW -->|Texto| TXT[Processar Texto]
+### 🔄 Fluxo dos Agentes
 
-    SW -->|Áudio| AUDIO[Baixar Áudio]
-    AUDIO --> STT[OpenAI Speech-to-Text]
-    STT --> TXT
+<p align="center">
+  <img src="Diagrama_Fluxo_Agentes_IA.png" alt="Arquitetura do Assistente Pessoal Multiagente" width="850">
+</p>
 
-    TXT --> ORQ[Agente Orquestrador]
+### Como funciona
 
-    ORQ --> EMAIL[Agente de E-mail]
-    ORQ --> CAL[Agente de Calendário]
-    ORQ --> CONT[Agente de Contatos]
-    ORQ --> CONTENT[Criador de Conteúdo]
-    ORQ --> TAVILY[Tavily]
-    ORQ --> CALC[Calculadora]
+1. O usuário envia uma mensagem de **texto ou áudio pelo Telegram**.
+2. Mensagens de áudio são convertidas em texto utilizando **OpenAI Speech-to-Text**.
+3. O **Agente Orquestrador** interpreta a intenção do usuário.
+4. A solicitação é encaminhada para o agente ou ferramenta correspondente.
+5. O agente executa a ação utilizando o serviço integrado.
+6. O resultado retorna ao usuário pelo **Telegram**.
 
-    EMAIL --> GMAIL[Gmail]
-    CAL --> GCAL[Google Calendar]
-    CONT --> GCONTACTS[Google Contacts]
-    CONTENT --> OPENAI[OpenAI]
+### Agentes e integrações
 
-    ORQ --> RESP[Resposta]
-    RESP --> TG
-````
-
----
+- 📧 **Agente de E-mail** → Gmail
+- 📅 **Agente de Calendário** → Google Calendar
+- 👥 **Agente de Contatos** → Google Contacts
+- ✍️ **Criador de Conteúdo** → OpenAI + Tavily
+- 🌐 **Pesquisa Web** → Tavily
+- 🧮 **Cálculos** → Calculator
+- 🧠 **Memória** → Simple Memory
 
 ## ⚙️ Funcionamento do Workflow
 
@@ -421,7 +390,4 @@ O projeto explora conceitos como:
 
 ⭐ Se este projeto foi útil ou interessante, considere deixar uma **Star** no repositório.
 
-```
 
-Só um detalhe: no GitHub, o bloco `mermaid` já é renderizado como diagrama automaticamente, então pode deixar exatamente como está.
-```
